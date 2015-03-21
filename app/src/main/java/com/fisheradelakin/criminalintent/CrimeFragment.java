@@ -1,7 +1,7 @@
 package com.fisheradelakin.criminalintent;
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 /**
  * Created by Fisher on 3/19/15.
@@ -52,7 +55,8 @@ public class CrimeFragment extends Fragment {
         });
 
         mDateButton = (Button)v.findViewById(R.id.crime_date);
-        mDateButton.setText(mCrime.getDate().toString());
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMM F, yyyy", Locale.US);
+        mDateButton.setText(sdf.format(mCrime.getDate()));
         mDateButton.setEnabled(false);
 
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
