@@ -18,7 +18,7 @@ public abstract class SingleFragmentActivity extends ActionBarActivity {
         setContentView(R.layout.activity_fragment);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(getString(R.string.app_name));
+        toolbar.setTitle("Criminal Intent");
         setSupportActionBar(toolbar);
 
         FragmentManager fm = getSupportFragmentManager();
