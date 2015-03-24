@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -26,12 +25,6 @@ public class CrimePagerActivity extends ActionBarActivity {
         mViewPager = new ViewPager(this);
         mViewPager.setId(R.id.viewPager);
         setContentView(mViewPager);
-
-        Toolbar toolbar = (Toolbar)(findViewById(R.id.toolbar));
-        if(toolbar != null) {
-            setSupportActionBar(toolbar);
-            getSupportActionBar().setHomeButtonEnabled(true);
-        }
 
         mCrimes = CrimeLab.get(this).getCrimes();
 
@@ -59,7 +52,7 @@ public class CrimePagerActivity extends ActionBarActivity {
             public void onPageSelected(int position) {
                 Crime crime = mCrimes.get(position);
                 if(crime.getTitle() != null) {
-                    getSupportActionBar().setTitle(crime.getTitle());
+                    setTitle(crime.getTitle());
                 }
             }
 
