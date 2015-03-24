@@ -1,6 +1,6 @@
 package com.fisheradelakin.criminalintent;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 
 /**
  * Created by Fisher on 3/21/15.
